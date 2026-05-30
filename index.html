@@ -95,7 +95,6 @@
 
         <div class="button-group">
             <button class="action-btn" onclick="window.location.href='pc_archive.html'">PC버전 메인 보기</button>
-            
             <button class="action-btn" onclick="openModal('mobileModal')">모바일 메인 보기</button>
             <button class="action-btn comment-btn" onclick="openModal('commentModal')">방명록 남기기 📝</button>
         </div>
@@ -105,7 +104,7 @@
             <li class="episode-item"><a href="ep2.html" class="episode-link"><img src="thumb2.JPEG" class="ep-thumb"><div class="ep-text-group"><span class="ep-number">#02</span><span class="ep-title">2화 - 지각 1분 전</span></div></a></li>
             <li class="episode-item"><a href="ep3.html" class="episode-link"><img src="thumb3.JPEG" class="ep-thumb"><div class="ep-text-group"><span class="ep-number">#03</span><span class="ep-title">3화 - 변함없는 소꿉친구들</span></div></a></li>
             <li class="episode-item"><a href="ep4.html" class="episode-link"><img src="thumb4.JPEG" class="ep-thumb"><div class="ep-text-group"><span class="ep-number">#04</span><span class="ep-title">4화 - 진지한 고민</span></div></a></li>
-            </ul>
+        </ul>
     </div>
 
     <div id="mobileModal" class="modal modal-mobile" onclick="closeOnBackground(event, 'mobileModal')">
@@ -127,9 +126,18 @@
                 <button class="close-btn" onclick="closeModal('commentModal')">&times;</button>
             </div>
             <div class="modal-body">
-                <div style="min-height: 200px; color: #777;">
-                    [여기에 외부 댓글 스크립트 삽입]
-                </div>
+                
+                <div id="disqus_thread"></div>
+                <script>
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://neoneun-nayi-2-bangmunrog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                
             </div>
         </div>
     </div>
@@ -151,5 +159,7 @@
             }
         }
     </script>
+
+    <script id="dsq-count-scr" src="//neoneun-nayi-2-bangmunrog.disqus.com/count.js" async></script>
 </body>
 </html>
