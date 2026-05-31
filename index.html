@@ -48,8 +48,9 @@
             overflow: hidden; 
         }
 
-        /* 모바일 캡처본(세로형) 너비 맞춤 */
+        /* 모바일 캡처본(세로형) 및 방명록 너비 맞춤 */
         .modal-mobile .modal-content { max-width: 450px; } 
+        .modal-comment .modal-content { max-width: 500px; } 
 
         /* 🌟 고정된 모달 헤더 */
         .modal-header {
@@ -71,6 +72,7 @@
             overflow-y: auto; 
             background-color: #f9f9f9;
         }
+        .modal-comment .modal-body { padding: 20px; background-color: #fff; }
         
         .modal-img { width: 100%; height: auto; display: block; }
 
@@ -89,12 +91,12 @@
             <p>그동안 함께해 주시고 응원해 주신 모든 독자분께 진심으로 감사드립니다.</p>
         </div>
 
-        <img src="stats.png" alt="연재 당시 조회수 및 관심독자 기록" class="stats-image">
+        <img src="stats.jpg" alt="연재 당시 조회수 및 관심독자 기록" class="stats-image">
 
         <div class="button-group">
             <button class="action-btn" onclick="window.location.href='pc_archive.html'">PC버전 메인 보기</button>
             <button class="action-btn" onclick="openModal('mobileModal')">모바일 메인 보기</button>
-            <button class="action-btn comment-btn" onclick="window.open('https://comic.naver.com/작품혹은작가홈주소', '_blank')">우리의 추억 남기러 가기 💬</button>
+            <button class="action-btn comment-btn" onclick="openModal('commentModal')">방명록 남기기 📝</button>
         </div>
         
         <ul class="episode-list">
@@ -158,6 +160,27 @@
         </div>
     </div>
 
+    <div id="commentModal" class="modal modal-comment" onclick="closeOnBackground(event, 'commentModal')">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">여러분의 추억을 남겨주세요 📝</div>
+                <button class="close-btn" onclick="closeModal('commentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="disqus_thread"></div>
+                <script>
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://neoneun-nayi-2-bangmunrog.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openModal(id) {
             document.getElementById(id).style.display = 'flex';
@@ -175,5 +198,7 @@
             }
         }
     </script>
+    
+    <script id="dsq-count-scr" src="//neoneun-nayi-2-bangmunrog.disqus.com/count.js" async></script>
 </body>
 </html>
