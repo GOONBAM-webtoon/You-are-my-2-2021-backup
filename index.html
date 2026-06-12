@@ -19,6 +19,11 @@
         .button-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
         .action-btn { background-color: #444; color: white; border: none; padding: 12px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; font-size: 14px; }
         .action-btn:hover { background-color: #222; }
+        
+        /* 나무위키 버튼 스타일 추가 */
+        .action-btn.namu-btn { background-color: #00A495; color: #fff; }
+        .action-btn.namu-btn:hover { background-color: #008c7f; }
+
         .action-btn.comment-btn { background-color: #00d564; color: #fff; }
         .action-btn.comment-btn:hover { background-color: #00b354; }
 
@@ -96,6 +101,7 @@
         <div class="button-group">
             <button class="action-btn" onclick="window.location.href='pc_archive.html'">PC버전 메인 보기</button>
             <button class="action-btn" onclick="openModal('mobileModal')">모바일 메인 보기</button>
+            <button class="action-btn namu-btn" onclick="window.open('https://namu.wiki/w/%EB%84%88%EB%8A%94%20%EB%82%98%EC%9D%98%202%25', '_blank')">나무위키 문서 🌲</button>
             <button class="action-btn comment-btn" onclick="openModal('commentModal')">방명록 남기기 📝</button>
         </div>
         
